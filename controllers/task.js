@@ -33,7 +33,11 @@ exports.update = function (req, res) {
 };
 
 exports.getAll = function (req, res) {
-  Task.find({}, function (err, tasks) {
+  const q = req.query;
+  const options = {};
+  if (has(q, "status")) options.status = q.status;
+
+  Task.find(options, function (err, tasks) {
     if (err) return next(err);
     res.json({ status: "success", tasks });
   });
