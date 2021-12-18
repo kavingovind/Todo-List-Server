@@ -11,7 +11,7 @@ const app = express();
 
 // Set up mongoose connection
 let mongodb_url =
-  "mongodb+srv://kavingovind:kavingovind@cluster0.pgeol.mongodb.net/toDoList?retryWrites=true&w=majority";
+  "mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.pgeol.mongodb.net/<DATABASE_NAME>?retryWrites=true&w=majority";
 
 const mongoDB = process.env.MONGODB_URI || mongodb_url;
 mongoose.connect(mongoDB);
