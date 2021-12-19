@@ -1,3 +1,4 @@
+const { has } = require("lodash");
 const Task = require("../models/task");
 
 //Simple version, without validation
